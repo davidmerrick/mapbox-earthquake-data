@@ -36,8 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 let longitude = data[2];
 
                 p.radians()
-                let x = mercX(p, latitude) - centerX;
-                let y = mercY(p, longitude) - centerY;
+                let x = mercX(p, longitude) - centerX;
+                let y = mercY(p, latitude) - centerY;
 
                 p.fill(255, 0, 255, 200);
                 p.ellipse(x, y, 20, 20);
