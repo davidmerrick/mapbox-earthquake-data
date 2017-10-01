@@ -7,6 +7,7 @@ const MAP_HEIGHT = 512;
 var centerLat = 0;
 var centerLong = 0;
 var zoom = 1;
+var mapImage;
 
 // Shanghai
 var latitude = 31.2304;
@@ -19,13 +20,11 @@ document.addEventListener("DOMContentLoaded", () => {
             imgUrl += "/v4/mapbox.dark/";
             imgUrl += `${centerLat},${centerLong},${zoom},0/${MAP_WIDTH}x${MAP_HEIGHT}.png`;
             imgUrl += `?access_token=${Config.MAPBOX_ACCESS_TOKEN}`;
-            let mapImg = p.loadImage(imgUrl);
+            mapImage = p.loadImage(imgUrl);
         }
         p.setup = () => {
             p.createCanvas(MAP_WIDTH, MAP_HEIGHT);
-        }
-        p.draw = () => {
-            p.ellipse(50, 50, 80, 80);
+            p.image(mapImage, 0, 0);
         }
     });
 });
