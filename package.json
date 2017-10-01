@@ -1,0 +1,22 @@
+{
+  "name": "mapbox-earthquake-data",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidmerrick/mapbox-earthquake-data.git"
+  },
+  "author": "David Merrick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidmerrick/mapbox-earthquake-data/issues"
+  },
+  "homepage": "https://github.com/davidmerrick/mapbox-earthquake-data#readme",
+  "dependencies": {
+    "p5": "^0.5.14"
+  }
+}
