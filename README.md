@@ -5,3 +5,7 @@ Uses [Web Mercator](https://en.wikipedia.org/wiki/Web_Mercator) formulas to proj
 Earthquake data is available [here](https://earthquake.usgs.gov/earthquakes/feed/v1.0/csv.php).
 
 ![](img/screenShot.png)
+
+# Usage
+
+Just run `npm start` to stort the web server.
