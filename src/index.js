@@ -31,10 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             for(var i = 1; i < earthquakes.length; i++){ // skip header line
                 let data = earthquakes[i].split(/,/);
-                let latitude = data[1];
-                let longitude = data[2];
-
-                drawCircle(p, latitude, longitude);
+                drawCircle(p, data);
             }
         }
     });
@@ -48,15 +45,25 @@ function getImageUrl(){
     return imgUrl;
 }
 
-function drawCircle(p, latitude, longitude){
+function drawCircle(p, earthquakeData){
+    let latitude = earthquakeData[1];
+    let longitude = earthquakeData[2];
+    let magnitude = earthquakeData[4];
+    magnitude = p.pow(10, magnitude);
+    magnitude = p.sqrt(magnitude);
+    let maxMagnitude = p.sqrt(p.pow(10, 10));
+
     let centerX = mercX(p, CENTER_LONG);
     let centerY = mercY(p, CENTER_LAT);
 
     let x = mercX(p, longitude) - centerX;
     let y = mercY(p, latitude) - centerY;
 
+    let diameter = p.map(magnitude, 0, maxMagnitude, 0, 60);
+
+    p.stroke(255, 0, 255);
     p.fill(255, 0, 255, 200);
-    p.ellipse(x, y, 20, 20);
+    p.ellipse(x, y, diameter, diameter);
 }
 
 function mercX(p, longitude){
